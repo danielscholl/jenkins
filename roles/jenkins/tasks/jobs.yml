@@ -1,0 +1,15 @@
+---
+- name: Build job directories are present
+  file:
+    path='{{ jenkins_lib }}/jobs/{{ item }}'
+    state=directory
+  with_items: jenkins.jobs
+
+- name: Build jobs are present
+  template:
+    src=build.xml.j2
+    dest='{{ jenkins_lib }}/jobs/{{ item }}/config.xml'
+    backup=yes
+  with_items: jenkins.jobs
+  notify:
+    - 'Restart Jenkins'

@@ -1,0 +1,24 @@
+---
+
+- name: Package prerequisites for node.js
+  action: apt pkg=python-software-properties state=installed update-cache=yes
+  tags: [nodejs]
+
+- name: Setup Script
+  shell: curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+  tags: [nodejs]
+
+- name: Install Node.js
+  apt: pkg=nodejs state=installed update_cache=yes
+  tags: [nodejs]
+
+- name: Create symlink for node
+  file: src=/usr/bin/nodejs dest=/usr/local/bin/node state=link
+  tags: [nodejs]
+
+- name: ensure Node packages are present
+  npm: name={{ item }} global=yes
+  with_items:
+    - bower
+    - grunt-cli
+    - mocha

@@ -1,0 +1,11 @@
+---
+placeholder: 'placeholder'
+port: 8080
+plugins:
+  - 'git-client'
+  - 'git'
+#  - 'ldap'
+#   - 'github'
+#   - 'translation'
+#   - 'preSCMbuildstep'
+#   - 'gravatar'
