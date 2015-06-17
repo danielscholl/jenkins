@@ -1,0 +1,6 @@
+---
+# vars file for mongodb
+
+mongodb_service_name: mongod
+mongodb_dbpath: /var/lib/mongodb
+mongodb_logpath: /var/log/mongodb/mongod.log
