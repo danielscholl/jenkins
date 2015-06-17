@@ -4,4 +4,5 @@
   roles:
     - nodejs
     - ruby
+    - mongodb
     - jenkins

@@ -1,0 +1,5 @@
+---
+# vars file for mongodb (Ubuntu specific)
+
+mongodb_packages:
+  - mongodb-org={{ mongodb_version }}
